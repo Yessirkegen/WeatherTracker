@@ -1,0 +1,19 @@
+body {
+    transition: background-color 0.5s ease;
+}
+
+.sunny {
+    background-color: #ffeb3b;
+}
+
+.cloudy {
+    background-color: #9e9e9e;
+}
+
+.rainy {
+    background-color: #3f51b5;
+}
+
+.clear {
+    background-color: #03a9f4;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода в городе</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1>Погода в вашем городе</h1>
+        <form id="weather-form" class="mb-4">
+            <input type="text" id="city" class="form-control" placeholder="Введите название города" required>
+            <button type="submit" class="btn btn-primary mt-2">Узнать погоду</button>
+        </form>
+        <div id="weather-result" class="d-none">
+            <h2 id="weather-city"></h2>
+            <p id="weather-condition"></p>
+            <p id="weather-temp"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
