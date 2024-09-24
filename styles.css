@@ -1,0 +1,111 @@
+/* Default background */
+
+body {
+    background-color: #1d3c65;
+    color: white;
+}
+
+/* Background styles for temperature ranges */
+body.hot {
+    background-color: #dd836f; /* Hot (>= 30°C) */
+}
+
+body.warm {
+    background-color: #ffca7b; /* Warm (20°C to 30°C) */
+}
+
+body.cool {
+    background-color: #00ffff; /* Cool (10°C to 20°C) */
+}
+
+body.cold {
+    background-color: #2196F3; /* Cold (< 10°C) */
+}
+
+.weather-card {
+    background-color: #2667A0;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.search-bar {
+    background-color: #F1F1F1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.temp {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.forecast-item {
+    background-color: #1e4979;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.forecast-item img {
+    width: 50px;
+}
+
+.footer {
+    margin-top: 30px;
+}
+body {
+    background-color: #1d3c65;
+    color: white;
+    position: relative;
+    overflow: hidden; /* Prevents scrollbars from appearing */
+}
+
+/* Background styles for temperature ranges */
+.weather-card {
+    background-color: rgba(38, 103, 160, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1; /* Ensures the card is above the video */
+}
+
+.search-bar {
+    background-color: #F1F1F1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.temp {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.forecast-item {
+    background-color: #1e4979;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.forecast-item img {
+    width: 50px;
+}
+
+.footer {
+    margin-top: 30px;
+}
+
+video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensures the video is behind everything */
+    opacity: 0.5; /* Adjusts the transparency of the video */
+}
