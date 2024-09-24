@@ -1,19 +1,58 @@
+/* Default background */
+
 body {
-    transition: background-color 0.5s ease;
+    background-color: #1d3c65;
+    color: white;
 }
 
-.sunny {
-    background-color: #ffeb3b;
+/* Background styles for temperature ranges */
+body.hot {
+    background-color: #FF5722; /* Hot (>= 30°C) */
 }
 
-.cloudy {
-    background-color: #9e9e9e;
+body.warm {
+    background-color: #FFC107; /* Warm (20°C to 30°C) */
 }
 
-.rainy {
-    background-color: #3f51b5;
+body.cool {
+    background-color: #03A9F4; /* Cool (10°C to 20°C) */
 }
 
-.clear {
-    background-color: #03a9f4;
+body.cold {
+    background-color: #2196F3; /* Cold (< 10°C) */
+}
+
+.weather-card {
+    background-color: #2667A0;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.search-bar {
+    background-color: #F1F1F1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.temp {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.forecast-item {
+    background-color: #1e4979;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.forecast-item img {
+    width: 50px;
+}
+
+.footer {
+    margin-top: 30px;
 }

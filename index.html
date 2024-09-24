@@ -1,26 +1,147 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Погода в городе</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>Weather Card</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1d3c65;
+            color: white;
+        }
+        .weather-card {
+            background-color: #2667A0;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .search-bar {
+            background-color: #F1F1F1;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 15px;
+            width: 100%;
+        }
+        .temp {
+            font-size: 60px;
+            font-weight: bold;
+        }
+        .forecast-item {
+            background-color: #1e4979;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .forecast-item img {
+            width: 50px;
+        }
+        .footer {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container text-center mt-5">
-        <h1>Погода в вашем городе</h1>
-        <form id="weather-form" class="mb-4">
-            <input type="text" id="city" class="form-control" placeholder="Введите название города" required>
-            <button type="submit" class="btn btn-primary mt-2">Узнать погоду</button>
-        </form>
-        <div id="weather-result" class="d-none">
-            <h2 id="weather-city"></h2>
-            <p id="weather-condition"></p>
-            <p id="weather-temp"></p>
+
+    <div class="container weather-card">
+        <div class="row">
+            <div class="col-lg-9">
+                <h2 id="city-name">Enter city</h2> <!-- Изменяем статический город на динамический -->
+                 <p id="weather-description">Weather details will be displayed here</p> <!-- Для динамической информации о погоде -->            </div>
+            <div class="col-lg-3 text-right">
+                <input type="text" id="search-city" class="search-bar" placeholder="Search city">
+                <button id="search-btn" class="btn btn-primary mt-2">Search</button>
+
+            </div>
+        </div>
+
+        
+        <div class="row align-items-center">
+            <div class="col-lg-3">
+                <div class="temp" id="temperature">--°</div> <!-- Динамическая температура -->
+                <p id="condition-text">Condition</p> <!-- Динамическое состояние погоды -->
+            </div>
+        </div>
+
+        <!-- Слайдер для почасового прогноза -->
+        <div id="hourly-slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" id="hourly-forecast">
+                <!-- Карточки почасового прогноза будут добавлены динамически -->
+            </div>
+            <a class="carousel-control-prev" href="#hourly-slider" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#hourly-slider" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <hr>
+
+        <div class="row text-center">
+            <div class="col-md-2 forecast-item">
+                <p>Monday</p>
+                <img src="https://img.icons8.com/ios/50/000000/partly-cloudy-day.png" alt="cloudy">
+                <p>H: 35° L: 28°</p>
+            </div>
+            <div class="col-md-2 forecast-item">
+                <p>Tuesday</p>
+                <img src="https://img.icons8.com/ios/50/000000/cloud.png" alt="cloudy">
+                <p>H: 34° L: 28°</p>
+            </div>
+            <div class="col-md-2 forecast-item">
+                <p>Wednesday</p>
+                <img src="https://img.icons8.com/ios/50/000000/partly-cloudy-day.png" alt="cloudy">
+                <p>H: 34° L: 28°</p>
+            </div>
+            <div class="col-md-2 forecast-item">
+                <p>Thursday</p>
+                <img src="https://img.icons8.com/ios/50/000000/wind.png" alt="wind">
+                <p>H: 34° L: 28°</p>
+            </div>
+            <div class="col-md-2 forecast-item">
+                <p>Friday</p>
+                <img src="https://img.icons8.com/ios/50/000000/sun.png" alt="sunny">
+                <p>H: 34° L: 28°</p>
+            </div>
+            <div class="col-md-2 forecast-item">
+                <p>Saturday</p>
+                <img src="https://img.icons8.com/ios/50/000000/sun.png" alt="sunny">
+                <p>H: 34° L: 28°</p>
+            </div>
+        </div>
+
+        <div class="row footer text-center mt-4">
+            <div class="col-md-3 forecast-item">
+                <p>Guangzhou</p>
+                <p>34° Showers</p>
+                <p>H: 34° L: 28°</p>
+            </div>
+            <div class="col-md-3 forecast-item">
+                <p>Sydney</p>
+                <p>14° Sunny</p>
+                <p>H: 17° L: 9°</p>
+            </div>
+            <div class="col-md-3 forecast-item">
+                <p>Melbourne</p>
+                <p>11° Strong Wind</p>
+                <p>H: 12° L: 4°</p>
+            </div>
+            <div class="col-md-3 forecast-item">
+                <p>Shanghai</p>
+                <p>28° Partly Cloudy</p>
+                <p>H: 32° L: 28°</p>
+            </div>
         </div>
     </div>
 
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

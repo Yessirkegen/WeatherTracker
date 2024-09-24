@@ -18,6 +18,20 @@ type CurrentWeather struct {
 	Condition WeatherCondition `json:"condition"`
 }
 
+type HourlyForecast struct {
+	Time      string           `json:"time"`
+	TempC     float64          `json:"temp_c"`
+	Condition WeatherCondition `json:"condition"`
+}
+
+type ForecastDay struct {
+	Hour []HourlyForecast `json:"hour"`
+}
+
+type Forecast struct {
+	Forecastday []ForecastDay `json:"forecastday"`
+}
+
 type Location struct {
 	Name string `json:"name"`
 }
@@ -25,9 +39,10 @@ type Location struct {
 type WeatherResponse struct {
 	Location Location       `json:"location"`
 	Current  CurrentWeather `json:"current"`
+	Forecast Forecast       `json:"forecast"`
 }
 
-const apiKey = "687fc21172mshaad4c59aecf4c2cp159407jsn211cf0f1cebc" // Ваш API ключ
+const apiKey = "687fc21172mshaad4c59aecf4c2cp159407jsn211cf0f1cebc"
 
 func main() {
 	http.Handle("/", http.FileServer(http.Dir("./")))
@@ -39,7 +54,8 @@ func main() {
 			return
 		}
 
-		url := fmt.Sprintf("https://weatherapi-com.p.rapidapi.com/current.json?q=%s", city)
+		// URL для почасового прогноза
+		url := fmt.Sprintf("https://weatherapi-com.p.rapidapi.com/forecast.json?q=%s&days=1&hour=24", city)
 		req, _ := http.NewRequest("GET", url, nil)
 		req.Header.Add("x-rapidapi-key", apiKey)
 		req.Header.Add("x-rapidapi-host", "weatherapi-com.p.rapidapi.com")
@@ -59,11 +75,13 @@ func main() {
 			return
 		}
 
+		// Отправляем JSON-ответ на фронтенд
+		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(weatherData)
 	})
 
 	fmt.Println("Сервер запущен на порту 8080")
-	if err := http.ListenAndServe(":8081", nil); err != nil {
+	if err := http.ListenAndServe(":8082", nil); err != nil {
 		fmt.Println("Ошибка при запуске сервера:", err)
 	}
 }
