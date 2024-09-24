@@ -3,44 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeatherTrack - About Us</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <title>WeatherTracker</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>footer {
+        background-color: #000000; /* Change footer background color */
+        color: rgb(0, 0, 0); /* Change footer text color */
+        padding: 10px 0; /* Optional: add some padding */
+    }</style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">WeatherTrack</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="forecast.html">Forecast</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="about.html">About Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <main class="container mt-4">
-        <section id="about">
-            <h2>About WeatherTrack</h2>
-            <p>WeatherTrack provides reliable and up-to-date weather information. Our mission is to help users stay informed about weather conditions in their area.</p>
-        </section>
-    </main>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">WeatherTracker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">City</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="map.html">Map</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="about.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <footer class="text-center mt-4">
-        <p>Created by Bexultan Yessirkegen</p>
+    <div class="container mt-5" style="height: 100%">
+        <h1>About WeatherTracker</h1>
+        <p>
+            WeatherTracker is a comprehensive weather application designed to provide users with real-time weather updates, forecasts, and various types of weather maps. Our mission is to empower individuals with accurate and timely information to help them make informed decisions about their daily activities and travel plans.
+        </p>
+        <h2>Our Features</h2>
+        <ul>
+            <li><strong>Real-time Weather Updates:</strong> Get the latest weather information for your city or any location around the globe.</li>
+            <li><strong>Interactive Maps:</strong> Explore different types of weather maps, including temperature, precipitation, and radar maps.</li>
+            <li><strong>Forecasts:</strong> View detailed weather forecasts for the upcoming days to plan ahead.</li>
+            <li><strong>User-Friendly Interface:</strong> Our application is designed with simplicity in mind, making it easy for everyone to use.</li>
+        </ul>
+        <h2>Our Vision</h2>
+        <p>
+            We envision a world where everyone has access to accurate and up-to-date weather information. Whether you're planning a picnic, a hike, or just commuting to work, WeatherTracker aims to be your go-to source for all things weather-related.
+        </p>
+        <h2>Contact Us</h2>
+        <p>
+            We are always eager to hear from our users! If you have any questions, feedback, or suggestions, please feel free to reach out to us at <a href="mailto:support@weathertracker.com">support@weathertracker.com</a>.
+        </p>
+    </div>
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3">
+            <span>&copy; Bexultan Yessirkegen SE-2329</span>
+        </div>
     </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

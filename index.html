@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Card</title>
+    <title>WeatherTracker</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
     <style>
         body {
             background-color: #1d3c65;
@@ -21,6 +23,7 @@
             margin-top: 20px;
             position: relative;
             z-index: 1; /* Ensures the card is above the video */
+            height: 100%;
         }
         .search-bar {
             background-color: #F1F1F1;
@@ -43,9 +46,7 @@
         .forecast-item img {
             width: 50px;
         }
-        .footer {
-            margin-top: 30px;
-        }
+        
         video {
             position: absolute;
             width: 100%;
@@ -60,10 +61,30 @@
     flex-wrap: nowrap; /* Prevents wrapping to the next line */
     overflow-x: auto; /* Allows horizontal scrolling if items overflow */
 }
-
+        footer {
+            background-color: #000000; /* Change footer background color */
+            color: rgb(0, 0, 0); /* Change footer text color */
+            padding: 10px 0; /* Optional: add some padding */
+        }
     </style>
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">WeatherTracker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="sidebar">
+                <a href="index.html">City</a>
+                <a href="map.html">Map</a>
+                <a href="about.html">About Us</a>
+            </div>
+        </div>
+    </nav>
+    
+   
 
     <video id="background-video" autoplay loop muted>
         <source id="video-source" src="" type="video/mp4">
@@ -172,7 +193,13 @@
             </div>
         </div>
     </div>
-
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div id = "footer-content">
+        <div class="text-center p-3">
+            <span>&copy; Bexultan Yessirkegen SE-2329</span>
+        </div>
+    </div>
+    </footer>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>

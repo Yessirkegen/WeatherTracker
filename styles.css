@@ -109,3 +109,48 @@ video {
     z-index: -1; /* Ensures the video is behind everything */
     opacity: 0.5; /* Adjusts the transparency of the video */
 }
+.sidebar {
+    position: absolute; /* Position the sidebar */
+    /*! left: 0; */           /* Align to the left */
+    /*! top: 60px; */         /* Adjust as needed to position below the navbar */
+    background-color: #fff0; /* Optional: match navbar color */
+    padding: 10px;    /* Optional: add some padding */
+    /*! width: 200px; */      /* Set a width for the sidebar */
+    right: 50px;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: static; /* Reset position for small screens */
+        display: flex;    /* Use flexbox for layout */
+        flex-direction: column; /* Stack items vertically */
+        background-color: #fff; /* Solid background for visibility */
+    }
+}
+
+.sidebar a {
+    /*! display: block; */    /* Make links block-level for better clickability */
+    padding: 10px;    /* Add some padding to the links */
+    text-decoration: none; /* Remove underline from links */
+    color: #000;    /* Change link color */
+}
+
+.sidebar a:hover {
+    background-color: #e9ecef; /* Highlight on hover */
+}
+html, body {
+    height: 100%; /* Full height for the body */
+    display: flex;
+    flex-direction: column; /* Column layout */
+}
+.content {
+    flex: 1; /* This makes the content take up available space */
+}
+footer {
+    
+    margin-top: 30px;
+    background-color: #343a40; /* Dark gray */
+    color: white; /* Change text color for better contrast */
+    
+    
+}
