@@ -81,7 +81,7 @@ func main() {
 	})
 
 	fmt.Println("Сервер запущен на порту 8080")
-	if err := http.ListenAndServe(":8082", nil); err != nil {
+	if err := http.ListenAndServe(":8083", nil); err != nil {
 		fmt.Println("Ошибка при запуске сервера:", err)
 	}
 }
